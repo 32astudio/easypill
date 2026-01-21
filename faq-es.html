@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EasyPill FAQs</title>
+    <style>
+        /* General Mobile-First Styling */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px; /* Prevents text from getting too wide on desktop */
+            margin: 0 auto; /* Centers the content */
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+
+        /* Headings */
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #2980b9; /* Blue color for section headers */
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 10px;
+            margin-top: 40px;
+            font-size: 20px;
+        }
+
+        h3 {
+            font-size: 17px;
+            color: #444;
+            margin-top: 25px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        /* Table of Contents Styling */
+        .toc-container {
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .toc-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            display: block;
+            font-size: 1.1em;
+        }
+        .toc-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .toc-list li {
+            margin-bottom: 8px;
+        }
+        .toc-list a {
+            text-decoration: none;
+            color: #2980b9;
+        }
+        .toc-list a:hover {
+            text-decoration: underline;
+        }
+
+        /* Content Styling */
+        p {
+            margin-bottom: 15px;
+        }
+
+        /* Indentation for Bullet Points (The "Right Indented" request) */
+        ul {
+            margin-left: 20px; /* Standard indent */
+            padding-left: 20px;
+            background-color: #fff;
+            padding: 15px 20px 15px 35px; /* Top Right Bottom Left */
+            border-left: 4px solid #ddd; /* Adds a visual line on the left */
+            border-radius: 4px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        /* Helper for "Back to top" links */
+        .back-to-top {
+            font-size: 0.8em;
+            color: #999;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Preguntas Frecuentes (FAQs) de EasyPill</h1>
+
+    <p>A continuación encontrará respuestas a preguntas comunes sobre las funciones y configuraciones de EasyPill.</p>
+
+    <div class="toc-container">
+        <span class="toc-title">Tabla de Contenido:</span>
+        <ul class="toc-list">
+            <li><strong>Notificaciones</strong></li>
+            <li><a href="#notif-1">1. ¿Por qué se retrasan mis notificaciones?</a></li>
+            <li><a href="#notif-2">2. ¿Cómo verifico la optimización de batería?</a></li>
+            <li><a href="#notif-3">3. Configuraciones específicas del fabricante</a></li>
+            <li><a href="#notif-4">4. ¿Necesito otorgar permisos específicos?</a></li>
+            <li><a href="#notif-5">5. ¿Qué hago si siguen sin funcionar?</a></li>
+            <li><a href="#notif-6">6. Limitaciones de notificaciones programadas</a></li>
+            <br>
+            <li><strong>OCR (Escaneo)</strong></li>
+            <li><a href="#ocr-1">1. ¿Por qué el OCR tiene uso gratuito limitado?</a></li>
+            <li><a href="#ocr-2">2. ¿La función OCR es multilingüe?</a></li>
+            <li><a href="#ocr-3">3. ¿Puedo confiar únicamente en el OCR?</a></li>
+        </ul>
+    </div>
+
+    <h2>Relacionado con Notificaciones</h2>
+
+    <h3 id="notif-1">1. ¿Por qué se retrasan mis notificaciones?</h3>
+    <p>Android prioriza la duración de la batería y el rendimiento, lo que a veces puede retrasar las aplicaciones que se ejecutan en segundo plano. Las razones comunes incluyen:</p>
+    <ul>
+        <li><strong>Modo Doze (Reposo):</strong> Una función de ahorro de energía de Android que limita la actividad en segundo plano cuando el teléfono está inactivo.</li>
+        <li><strong>Optimización de Batería:</strong> Muchas aplicaciones están restringidas por defecto para ahorrar energía, limitando la frecuencia con la que pueden "despertar" su dispositivo.</li>
+        <li><strong>Restricciones del Fabricante:</strong> Marcas como Samsung, Xiaomi y Huawei a menudo añaden capas extra de gestión de energía que cierran agresivamente los procesos en segundo plano.</li>
+        <li><strong>Factores del Dispositivo:</strong> Dispositivos antiguos, batería baja o "Forzar cierre" de la aplicación también pueden evitar que las alertas suenen a tiempo.</li>
+    </ul>
+    <a href="#" class="back-to-top">↑ Volver arriba</a>
+
+    <h3 id="notif-2">2. ¿Cómo verifico si mi aplicación está afectada por la optimización de batería?</h3>
+    <p>Para solucionar esto, debe configurar EasyPill como "Sin restricciones" o "No optimizado".</p>
+    <ul>
+        <li><strong>Android Stock (ej. Pixel):</strong> Vaya a <em>Configuración &gt; Aplicaciones &gt; EasyPill &gt; Batería</em> y seleccione <strong>Sin restricciones</strong>.</li>
+        <li><strong>Samsung:</strong> Vaya a <em>Ajustes &gt; Aplicaciones &gt; EasyPill &gt; Batería</em> y seleccione <strong>Sin restricciones</strong>.</li>
+        <li><strong>Xiaomi:</strong> Vaya a <em>Configuración &gt; Batería y rendimiento &gt; Ahorro de batería de aplicaciones &gt; EasyPill</em> y seleccione <strong>Sin restricciones</strong>.</li>
+    </ul>
+    <a href="#" class="back-to-top">↑ Volver arriba</a>
+
+    <h3 id="notif-3">3. ¿Qué pasa con las configuraciones específicas del fabricante?</h3>
+    <p>Diferentes marcas tienen herramientas únicas que pueden bloquear notificaciones. Aquí hay soluciones comunes:</p>
+    <ul>
+        <li><strong>Xiaomi/Redmi (MIUI):</strong> Habilite <strong>Inicio automático</strong> en la configuración de la App. Bloquee la app en su bandeja de aplicaciones recientes.</li>
+        <li><strong>Huawei/Honor:</strong> En configuración de Batería, busque <strong>Inicio de aplicaciones</strong>, seleccione EasyPill y adminístrelo manualmente (habilite Inicio automático, Inicio secundario y Ejecutar en segundo plano).</li>
+        <li><strong>OnePlus:</strong> Vaya a <em>Optimización de batería</em> y seleccione <strong>No optimizar</strong> para EasyPill.</li>
+        <li><strong>Oppo/Vivo:</strong> Permita la actividad en segundo plano en la información de la aplicación.</li>
+    </ul>
+    <a href="#" class="back-to-top">↑ Volver arriba</a>
+
+    <h3 id="notif-4">4. ¿Necesito otorgar permisos específicos?</h3>
+    <p>Sí. Para la mejor confiabilidad, asegúrese de lo siguiente:</p>
+    <ul>
+        <li><strong>Permisos de Notificación:</strong> Permita sonido, vibración y visibilidad en la pantalla de bloqueo en la configuración de su teléfono.</li>
+        <li><strong>Alarmas y Recordatorios (Android 12+):</strong> Permita este permiso en la <em>Información de la aplicación</em>.</li>
+        <li><strong>No Molestar:</strong> Asegúrese de que su teléfono no esté en un "Modo de Enfoque" que silencie las alertas.</li>
+    </ul>
+    <a href="#" class="back-to-top">↑ Volver arriba</a>
+
+    <h3 id="notif-5">5. ¿Qué hago si las notificaciones siguen sin funcionar?</h3>
+    <ul>
+        <li><strong>No fuerce el cierre:</strong> Deslizar la app para cerrarla desde la lista de aplicaciones recientes puede matar los procesos en segundo plano.</li>
+        <li><strong>Actualizar:</strong> Asegúrese de que tanto su sistema Android como la aplicación EasyPill estén actualizados.</li>
+        <li><strong>Contáctenos:</strong> Si los problemas persisten, contacte a soporte con su modelo de dispositivo y versión de Android.</li>
+    </ul>
+    <a href="#" class="back-to-top">↑ Volver arriba</a>
+
+    <h3 id="notif-6">6. ¿Existen limitaciones para las notificaciones programadas?</h3>
+    <p>Android no garantiza una sincronización exacta al segundo debido a las funciones de ahorro de energía. Aunque nos esforzamos por la precisión, pueden ocurrir ligeros retrasos. Además, reiniciar su teléfono puede requerir que la aplicación se abra una vez para reprogramar sus alertas.</p>
+    <a href="#" class="back-to-top">↑ Volver arriba</a>
+
+    <h2>Relacionado con OCR (Escaneo de Etiquetas)</h2>
+
+    <h3 id="ocr-1">1. ¿Por qué la función OCR tiene un uso gratuito limitado?</h3>
+    <p>Nuestra función OCR (Reconocimiento Óptico de Caracteres) depende de una infraestructura de IA avanzada de terceros, lo cual genera costos por cada escaneo. Por lo tanto, la versión gratuita tiene un límite de uso. Puede desbloquear más escaneos viendo anuncios o suscribiéndose a nuestro servicio mensual.</p>
+    <a href="#" class="back-to-top">↑ Volver arriba</a>
+
+    <h3 id="ocr-2">2. ¿La función OCR es multilingüe?</h3>
+    <p>Sí. El escáner OCR puede leer etiquetas en todos los idiomas actualmente soportados por EasyPill (revise el menú de Configuración). Sin embargo, tenga en cuenta que aunque <strong>lee</strong> el texto, no <strong>traduce</strong> la etiqueta a un idioma diferente.</p>
+    <a href="#" class="back-to-top">↑ Volver arriba</a>
+
+    <h3 id="ocr-3">3. ¿Puedo confiar únicamente en el resultado del OCR para información médica?</h3>
+    <p>No. Aunque nuestro OCR está rigurosamente probado, factores como la iluminación, daños en la etiqueta o estilos de fuente pueden afectar la precisión.</p>
+    <ul>
+        <li><strong>Verifique siempre:</strong> Revise cuidadosamente el texto escaneado y edítelo según sea necesario antes de guardar.</li>
+        <li><strong>Consulte a un profesional:</strong> Si no está seguro sobre las instrucciones de un medicamento, consulte siempre a su médico o farmacéutico. <strong>No confíe únicamente en la aplicación para decisiones médicas críticas.</strong></li>
+    </ul>
+    <a href="#" class="back-to-top">↑ Volver arriba</a>
+
+    <br><br>
+</body>
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EasyPill 常見問題 (FAQs)</title>
+    <style>
+        /* General Mobile-First Styling */
+        body {
+            /* Prioritize traditional chinese fonts */
+            font-family: -apple-system, BlinkMacSystemFont, "Microsoft JhengHei", "Heiti TC", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px; /* Prevents text from getting too wide on desktop */
+            margin: 0 auto; /* Centers the content */
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+
+        /* Headings */
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #2980b9; /* Blue color for section headers */
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 10px;
+            margin-top: 40px;
+            font-size: 20px;
+        }
+
+        h3 {
+            font-size: 17px;
+            color: #444;
+            margin-top: 25px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        /* Table of Contents Styling */
+        .toc-container {
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .toc-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            display: block;
+            font-size: 1.1em;
+        }
+        .toc-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .toc-list li {
+            margin-bottom: 8px;
+        }
+        .toc-list a {
+            text-decoration: none;
+            color: #2980b9;
+        }
+        .toc-list a:hover {
+            text-decoration: underline;
+        }
+
+        /* Content Styling */
+        p {
+            margin-bottom: 15px;
+        }
+
+        /* Indentation for Bullet Points (The "Right Indented" request) */
+        ul {
+            margin-left: 20px; /* Standard indent */
+            padding-left: 20px;
+            background-color: #fff;
+            padding: 15px 20px 15px 35px; /* Top Right Bottom Left */
+            border-left: 4px solid #ddd; /* Adds a visual line on the left */
+            border-radius: 4px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        /* Helper for "Back to top" links */
+        .back-to-top {
+            font-size: 0.8em;
+            color: #999;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>EasyPill 常見問題 (FAQs)</h1>
+
+    <p>以下是有關 EasyPill 功能和設定的常見問題解答。</p>
+
+    <div class="toc-container">
+        <span class="toc-title">目錄：</span>
+        <ul class="toc-list">
+            <li><strong>通知相關問題</strong></li>
+            <li><a href="#notif-1">1. 為什麼我的通知會延遲？</a></li>
+            <li><a href="#notif-2">2. 如何檢查電池最佳化？</a></li>
+            <li><a href="#notif-3">3. 製造商的特定設定 (小米/華為等)</a></li>
+            <li><a href="#notif-4">4. 我需要授權特定權限嗎？</a></li>
+            <li><a href="#notif-5">5. 如果通知仍然無法運作怎麼辦？</a></li>
+            <li><a href="#notif-6">6. 排程通知有限制嗎？</a></li>
+            <br>
+            <li><strong>OCR (標籤掃描)</strong></li>
+            <li><a href="#ocr-1">1. 為什麼 OCR 免費次數有限？</a></li>
+            <li><a href="#ocr-2">2. OCR 功能支援多種語言嗎？</a></li>
+            <li><a href="#ocr-3">3. 我可以完全依賴 OCR 嗎？</a></li>
+        </ul>
+    </div>
+
+    <h2>通知相關問題</h2>
+
+    <h3 id="notif-1">1. 為什麼我的通知會延遲？</h3>
+    <p>Android 系統會優先考量電池壽命和效能，這有時會導致背景執行的應用程式發生延遲。常見原因包括：</p>
+    <ul>
+        <li><strong>Doze 模式 (休眠模式)：</strong> Android 的省電功能，當手機閒置時會限制背景活動。</li>
+        <li><strong>電池效能最佳化：</strong> 許多應用程式預設受到限制以節省電力，限制了它們喚醒裝置的頻率。</li>
+        <li><strong>手機製造商的限制：</strong> Samsung、Xiaomi (小米) 和 Huawei (華為) 等品牌通常會添加額外的電源管理層，這些管理功能可能會強制關閉背景程序。</li>
+        <li><strong>裝置因素：</strong> 舊款裝置、低電量或「強制停止」應用程式也可能導致通知無法準時發送。</li>
+    </ul>
+    <a href="#" class="back-to-top">↑ 回到頂部</a>
+
+    <h3 id="notif-2">2. 如何檢查我的應用程式是否受到電池最佳化的影響？</h3>
+    <p>若要解決此問題，您需要將 EasyPill 設定為「無限制」或「未最佳化」。</p>
+    <ul>
+        <li><strong>原生 Android (如 Pixel)：</strong> 前往 <em>設定 &gt; 應用程式 &gt; EasyPill &gt; 電池</em>，然後選擇 <strong>無限制</strong>。</li>
+        <li><strong>Samsung (三星)：</strong> 前往 <em>設定 &gt; 應用程式 &gt; EasyPill &gt; 電池</em>，然後選擇 <strong>無限制</strong>。</li>
+        <li><strong>Xiaomi (小米)：</strong> 前往 <em>設定 &gt; 電池與性能 &gt; 應用程式省電 &gt; EasyPill</em>，然後選擇 <strong>無限制</strong>。</li>
+    </ul>
+    <a href="#" class="back-to-top">↑ 回到頂部</a>
+
+    <h3 id="notif-3">3. 關於製造商的特定設定？</h3>
+    <p>不同品牌有獨特的工具可能會阻擋通知。以下是常見的解決方法：</p>
+    <ul>
+        <li><strong>Xiaomi/Redmi (MIUI)：</strong> 在應用程式設定中啟用 <strong>自動啟動</strong>。並在最近使用的應用程式列表中鎖定 EasyPill。</li>
+        <li><strong>Huawei/Honor：</strong> 在電池設定中，找到 <strong>應用程式啟動</strong>，選擇 EasyPill 並手動管理 (啟用自動啟動、關聯啟動和背景執行)。</li>
+        <li><strong>OnePlus：</strong> 前往 <em>電池最佳化</em>，為 EasyPill 選擇 <strong>不最佳化</strong>。</li>
+        <li><strong>Oppo/Vivo：</strong> 在應用程式資訊中允許背景活動。</li>
+    </ul>
+    <a href="#" class="back-to-top">↑ 回到頂部</a>
+
+    <h3 id="notif-4">4. 我需要授權特定權限嗎？</h3>
+    <p>是的。為了確保最佳的可靠性，請確認以下事項：</p>
+    <ul>
+        <li><strong>通知權限：</strong> 在手機設定中允許音效、震動和鎖定螢幕顯示。</li>
+        <li><strong>鬧鐘與提醒 (Android 12+)：</strong> 在 <em>應用程式資訊</em> 下允許此權限。</li>
+        <li><strong>請勿打擾：</strong> 確保您的手機未處於會將通知靜音的「專注模式」。</li>
+    </ul>
+    <a href="#" class="back-to-top">↑ 回到頂部</a>
+
+    <h3 id="notif-5">5. 如果通知仍然無法運作怎麼辦？</h3>
+    <ul>
+        <li><strong>不要強制關閉：</strong> 從最近使用的應用程式列表中滑掉應用程式可能會終止背景程序。</li>
+        <li><strong>更新：</strong> 確保您的 Android 系統和 EasyPill 應用程式皆為最新版本。</li>
+        <li><strong>聯絡我們：</strong> 如果問題持續存在，請聯絡支援團隊並提供您的裝置型號和 Android 版本。</li>
+    </ul>
+    <a href="#" class="back-to-top">↑ 回到頂部</a>
+
+    <h3 id="notif-6">6. 排程通知有限制嗎？</h3>
+    <p>由於省電功能的緣故，Android 無法保證精確到秒的時間準確性。雖然我們力求精準，但仍可能發生輕微延遲。此外，重新啟動手機後，可能需要開啟應用程式一次，以便重新排程您的提醒。</p>
+    <a href="#" class="back-to-top">↑ 回到頂部</a>
+
+    <h2>OCR (標籤掃描) 相關問題</h2>
+
+    <h3 id="ocr-1">1. 為什麼 OCR 功能的免費使用次數有限？</h3>
+    <p>我們的 OCR (光學字元辨識) 功能依賴先進的第三方 AI 基礎設施，每次掃描都會產生額外成本。因此，免費版本設有使用限制。您可以透過觀看廣告或訂閱我們的月費服務來解鎖更多掃描次數。</p>
+    <a href="#" class="back-to-top">↑ 回到頂部</a>
+
+    <h3 id="ocr-2">2. OCR 功能支援多種語言嗎？</h3>
+    <p>是的。OCR 掃描器可以讀取 EasyPill 目前支援的所有語言的標籤 (請查看設定選單)。但請注意，雖然它可以 <strong>讀取 (辨識)</strong> 文字，但不會將標籤 <strong>翻譯</strong> 成其他語言。</p>
+    <a href="#" class="back-to-top">↑ 回到頂部</a>
+
+    <h3 id="ocr-3">3. 我可以完全依賴 OCR 輸出的醫療資訊嗎？</h3>
+    <p>不行。雖然我們的 OCR 經過嚴格測試，但光線、標籤損壞或字體樣式等因素都可能影響準確性。</p>
+    <ul>
+        <li><strong>務必核對：</strong> 在儲存之前，請仔細檢查掃描的文字並進行必要的編輯。</li>
+        <li><strong>諮詢專業人士：</strong> 如果您不確定藥物的使用說明，請務必諮詢您的醫生或藥劑師。<strong>切勿僅依賴應用程式做出重要的醫療決定。</strong></li>
+    </ul>
+    <a href="#" class="back-to-top">↑ 回到頂部</a>
+
+    <br><br>
+</body>
+</html>
