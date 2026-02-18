@@ -1,7 +1,8 @@
 {
-  "minSupportedVersion": "1.0.7",
+  "minSupportedVersion": "2.0.0",
   "isMaintenanceMode": false,
   "showMaintenanceMsg": false,
   "maintenanceMsg": "Our version server is under maintenance. Let's proceed with existing version."
 
 }
+
