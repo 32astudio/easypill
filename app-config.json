@@ -3,9 +3,11 @@
   "isMaintenanceMode": false,
   "showMaintenanceMsg": false,
   "maintenanceMsg": "Our version server is under maintenance. Let's proceed with existing version.",
-  "subscriptionCheckIntervalDays": 0
-
+  "subscriptionCheckIntervalDays": 0,
+  "minRewardPoints": 1,
+  "devMinRewardPoints": 30
 }
+
 
 
 
