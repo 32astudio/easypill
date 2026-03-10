@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>EasyPill - Med and Pill Reminder</title>
+    <style>
+        :root {
+            --primary: #635bff;
+            --primary-hover: #0a2540;
+            --text-main: #0a2540;
+            --text-muted: #425466;
+            --bg-light: #f6f9fc;
+            --bg-white: #ffffff;
+            --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: var(--font-family);
+            color: var(--text-main);
+            line-height: 1.6;
+            background-color: var(--bg-white);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: 0 20px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            overflow: hidden;
+            background-color: var(--bg-light);
+            padding: 120px 0 100px;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -10%;
+            width: 120%;
+            height: 100%;
+            background: linear-gradient(150deg, #ffffff 0%, #f6f9fc 100%);
+            transform: skewY(-10deg);
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            gap: 80px;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-text h1 {
+            font-size: 4rem;
+            line-height: 1.1;
+            margin: 0 0 24px;
+            letter-spacing: -1.5px;
+            font-weight: 800;
+            color: var(--text-main);
+        }
+
+        .hero-text p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            margin: 0 0 40px;
+            max-width: 450px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--primary);
+            color: #ffffff;
+            padding: 14px 28px;
+            border-radius: 999px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.2s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: var(--primary-hover);
+            transform: translateY(-2px);
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+
+        .hero-image img {
+            max-width: 280px;
+            width: 100%;
+            height: auto;
+            border-radius: 36px;
+            display: block;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 120px 0;
+            background: var(--bg-white);
+        }
+
+        .feature-row {
+            display: flex;
+            align-items: center;
+            gap: 100px;
+            margin-bottom: 120px;
+        }
+
+        .feature-row:last-child {
+            margin-bottom: 0;
+        }
+
+        .feature-row:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .feature-text {
+            flex: 1;
+        }
+
+        .feature-text h2 {
+            font-size: 2.5rem;
+            margin: 0 0 20px;
+            letter-spacing: -0.5px;
+            font-weight: 700;
+        }
+
+        .feature-text p {
+            font-size: 1.125rem;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        .feature-image-container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            padding: 60px 40px;
+            border-radius: 32px;
+        }
+
+        .feature-image-container img {
+            max-width: 260px;
+            width: 100%;
+            height: auto;
+            border-radius: 32px;
+        }
+
+        /* Section Accent Colors */
+        .bg-color-ffffff {
+            background-color: #ffffff;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.03);
+        }
+
+        .bg-color-f1fdfb {
+            background-color: #f1fdfb;
+        }
+
+        .bg-color-eae1d0 {
+            background-color: #eae1d0;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 120px 0;
+            background: var(--bg-light);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-form-wrapper {
+            max-width: 480px;
+            margin: 0 auto;
+            background: var(--bg-white);
+            padding: 48px;
+            border-radius: 16px;
+            box-shadow: 0 15px 35px rgba(50, 50, 93, 0.05), 0 5px 15px rgba(0, 0, 0, 0.03);
+        }
+
+        .contact-form-wrapper h2 {
+            font-size: 2rem;
+            margin: 0 0 32px;
+            text-align: center;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            font-size: 0.875rem;
+            color: var(--text-main);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid #e6ebf1;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: var(--font-family);
+            box-sizing: border-box;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            color: var(--text-main);
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: #aab7c4;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(99, 91, 255, 0.15);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .btn-block {
+            width: 100%;
+            padding: 16px;
+            font-size: 1.125rem;
+            border-radius: 8px;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--bg-white);
+            padding: 60px 0;
+            border-top: 1px solid #e6ebf1;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .footer-logo {
+            font-weight: 800;
+            font-size: 1.25rem;
+            color: var(--text-main);
+            letter-spacing: -0.5px;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+
+            .hero-content,
+            .feature-row,
+            .feature-row:nth-child(even) {
+                flex-direction: column;
+                text-align: center;
+                gap: 50px;
+            }
+
+            .hero-text p {
+                margin: 0 auto 40px;
+            }
+
+            .hero-text h1 {
+                font-size: 3rem;
+            }
+
+            .feature-text h2 {
+                font-size: 2rem;
+            }
+
+            .feature-image-container {
+                width: 100%;
+                box-sizing: border-box;
+            }
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        @media (max-width: 600px) {
+            .hero {
+                padding: 80px 0 60px;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .contact-form-wrapper {
+                padding: 32px 24px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Main (Hero) Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1 style="display: flex; align-items: center; gap: 16px;">
+                    <img src="./images/easypill1.png" alt="EasyPill Icon" style="height: 0.9em; width: auto;">
+                    EasyPill
+                </h1>
+                <p>Smart medicine and pill reminder. Stay perfectly on schedule with our intuitive application
+                    designed for your absolute peace of mind.</p>
+                <a href="javascript:void(0)" onclick="redirectToStore(event)" class="btn">Get Started for Free</a>
+            </div>
+            <div class="hero-image">
+                <img src="./images/pic1.png" alt="EasyPill App Screen">
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Features Section -->
+    <!--today-->
+    <section class="features">
+        <div class="container">
+            <div class="feature-row">
+                <div class="feature-text">
+                    <h2>Smart Notifications</h2>
+                    <p>EasyPill delivers timely and auto extended reminders that adapt to your
+                        daily routines and importance of your medications.</p>
+                </div>
+                <div class="feature-image-container bg-color-ffffff">
+                    <img src="./images/pic1.png">
+                </div>
+            </div>
+            <!--OCR-->
+            <div class="feature-row">
+                <div class="feature-text">
+                    <h2>OCR by AI</h2>
+                    <p>When AI do it for you, why input?</p>
+                </div>
+                <div class="feature-image-container bg-color-f1fdfb">
+                    <img src="./images/pic2.png">
+                </div>
+            </div>
+            <!--Detail - pic -->
+            <div class="feature-row">
+                <div class="feature-text">
+                    <h2>Protect you by making things clear</h2>
+                    <p>Images of the medicine and label are at your fingertips, and they've never been clearer.</p>
+                </div>
+                <div class="feature-image-container bg-color-eae1d0">
+                    <img src="./images/pic3.png">
+                </div>
+            </div>
+            <!--reports-->
+            <div class="feature-row">
+                <div class="feature-text">
+                    <h2>Not only Figures</h2>
+                    <p>In addition to your adherence rate, we offer handy reports for you to review your medication
+                        intake.</p>
+                </div>
+                <div class="feature-image-container bg-color-f1fdfb">
+                    <img src="./images/pic4.png">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leave a Message Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="contact-form-wrapper">
+                <h2>Let us know your thoughts</h2>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="userName">Full Name</label>
+                        <input type="text" id="userName" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="userEmail">Email Address</label>
+                        <input type="email" id="userEmail" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="userMessage">How can we help?</label>
+                        <textarea id="userMessage" placeholder="Write your message here..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-block">Send Message</button>
+                    <!-- Small copy email utility -->
+                    <div style="text-align: center; margin-top: 16px; font-size: 0.875rem;">
+                        <span style="color: var(--text-muted);">Or email us directly: </span>
+                        <a href="javascript:void(0)" onclick="copyEmail()"
+                            style="color: var(--primary); font-weight: 600; text-decoration: none;">dev@32astudio.com</a>
+                        <span id="copyFeedback" class="hidden" style="color: #10b981; margin-left: 8px;">Copied!</span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-logo" style="display: flex; align-items: center; gap: 8px;">
+                <img src="./images/easypill1.png" alt="EasyPill Icon" style="height: 1em; width: auto;">
+                EasyPill
+            </div>
+            <p>&copy; 2026 EasyPill | 32A Studio. All rights reserved</p>
+        </div>
+    </footer>
+
+    <script>
+        // 1. Handle Form Submission via Mailto
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const name = document.getElementById('userName').value;
+            const email = document.getElementById('userEmail').value;
+            const message = document.getElementById('userMessage').value;
+
+            const subject = encodeURIComponent(`Customer Support / Inquiry from EasyPill Website`);
+            const body = encodeURIComponent(`Name on Form: ${name}\nEmail on Form: ${email}\nMessage on Form:\n${message}`);
+
+            window.location.href = `mailto:dev@32astudio.com?subject=${subject}&body=${body}`;
+        });
+
+        // 2. Handle Copy Email to Clipboard
+        function copyEmail() {
+            const emailText = "dev@32astudio.com";
+            const feedback = document.getElementById('copyFeedback');
+
+            navigator.clipboard.writeText(emailText).then(() => {
+                feedback.classList.remove('hidden');
+                setTimeout(() => {
+                    feedback.classList.add('hidden');
+                }, 2000);
+            }).catch(err => {
+                console.error('Copy failed', err);
+            });
+        }
+
+        // 3. Handle Store Redirection
+        function redirectToStore(e) {
+            if (e) e.preventDefault();
+            const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+            if (/android/i.test(userAgent)) {
+                window.location.href = "https://play.google.com/store/apps/details?id=com.studio32a.easypill";
+            } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                window.location.href = "https://apps.apple.com/app/id6759731228";
+            } else {
+                // Default to Apple Store for desktop/other
+                window.location.href = "https://apps.apple.com/app/id6759731228";
+            }
+        }
+    </script>
+</body>
+
+</html>
