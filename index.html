@@ -281,6 +281,16 @@
             letter-spacing: -0.5px;
         }
 
+        .footer-link {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .footer-link:hover {
+            color: var(--primary);
+        }
+
         /* Responsive */
         @media (max-width: 900px) {
 
@@ -347,7 +357,7 @@
                 </h1>
                 <p>Smart medicine and pill reminder. Stay perfectly on schedule with our intuitive application
                     designed for your absolute peace of mind.</p>
-                <a href="javascript:void(0)" onclick="redirectToStore(event)" class="btn">Get Started for Free</a>
+                <a href="javascript:void(0)" onclick="redirectToStore(event)" class="btn">Download from Stores</a>
             </div>
             <div class="hero-image">
                 <img src="./images/pic1.png" alt="EasyPill App Screen">
@@ -436,12 +446,18 @@
 
     <!-- Footer Section -->
     <footer class="footer">
-        <div class="container footer-content">
+        <div class="container footer-content" style="align-items: center;">
             <div class="footer-logo" style="display: flex; align-items: center; gap: 8px;">
                 <img src="./images/easypill1.png" alt="EasyPill Icon" style="height: 1em; width: auto;">
                 EasyPill
             </div>
-            <p>&copy; 2026 EasyPill | 32A Studio. All rights reserved</p>
+            <div class="footer-links"
+                style="display: flex; gap: 24px; flex-wrap: wrap; justify-content: center; font-weight: 500;">
+                <a href="https://32astudio.github.io/easypill/tos-en.html" class="footer-link">Service Terms</a>
+                <a href="https://32astudio.github.io/easypill/privacy-en.html" class="footer-link">Privacy Policy</a>
+                <a href="https://32astudio.github.io/easypill/faq-en.html" class="footer-link">FAQ</a>
+            </div>
+            <p style="margin: 0;">&copy; 2026 EasyPill | 32A Studio. All rights reserved</p>
         </div>
     </footer>
 
