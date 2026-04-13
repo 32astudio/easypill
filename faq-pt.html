@@ -89,13 +89,56 @@
             margin-bottom: 10px;
         }
 
-        /* Helper for "Back to top" links */
-        .back-to-top {
-            font-size: 0.8em;
-            color: #999;
-            text-decoration: none;
-            display: inline-block;
+        /* Note styling */
+        .note {
+            font-style: italic;
+            color: #666;
             margin-top: 5px;
+            display: block;
+        }
+
+        /* Responsive FAQ Section (Image left, Text right) */
+        .faq-section {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-bottom: 40px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #eee;
+        }
+
+        .faq-image {
+            width: 100%;
+            text-align: center;
+        }
+
+        .faq-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .faq-content {
+            flex: 1;
+        }
+
+        .faq-content h3 {
+            margin-top: 0;
+        }
+
+        @media (min-width: 768px) {
+            .faq-section {
+                flex-direction: row;
+                align-items: flex-start;
+            }
+
+            .faq-image {
+                width: 300px;
+                flex-shrink: 0;
+            }
         }
     </style>
 </head>
@@ -108,6 +151,9 @@
     <div class="toc-container">
         <span class="toc-title">Índice:</span>
         <ul class="toc-list">
+            <li><strong>Uso</strong></li>
+            <li><a href="#getting-started">1. Primeiros Passos</a></li>
+            <br>
             <li><strong>Notificações</strong></li>
             <li><a href="#notif-1">1. Por que minhas notificações estão atrasadas?</a></li>
             <li><a href="#notif-2">2. Como verificar a otimização de bateria?</a></li>
@@ -122,6 +168,35 @@
             <li><a href="#ocr-3">3. Posso confiar apenas no resultado do OCR?</a></li>
         </ul>
     </div>
+
+
+    <h2 id="getting-started">Primeiros Passos</h2>
+    <div class="faq-section">
+        <div class="faq-image">
+            <img src="images/faq-navigation-pt.jpg" alt="Visão geral da navegação do aplicativo">
+        </div>
+        <div class="faq-content">
+            <h3>Botões do canto superior direito:</h3>
+            <ul>
+                <li><strong>Pontos de recompensa:</strong> Mostra os pontos de recompensa restantes. Os pontos de
+                    recompensa serão usados para recursos avançados como o OCR baseado em IA.</li>
+                <li><strong>Notas:</strong> Listagem e adicionar/editar notas. Existem 2 categorias de notas: sintomas ou
+                    leituras de saúde.</li>
+                <li><strong>Configurações:</strong> Configurações do aplicativo, como toque e Notas padrão (para
+                    facilitar a sua entrada e filtragem).</li>
+            </ul>
+
+            <h3>Botões de navegação (inferiores):</h3>
+            <ul>
+                <li><strong>Hoje:</strong> Mostra os medicamentos agendados para o dia atual e dias futuros. Marque o
+                    medicamento como tomado ou adie.</li>
+                <li><strong>Medicamentos:</strong> Adicione / Edite medicamentos e seus horários.</li>
+                <li><strong>Cuidadores:</strong> Cuidadores autorizados e funções relacionadas.</li>
+                <li><strong>Progresso:</strong> Taxa de adesão à medicação, leituras de saúde e relatórios.</li>
+            </ul>
+        </div>
+    </div>
+    <a href="#" class="back-to-top">↑ Volver ao topo</a>
 
     <h2>Relacionado a Notificações</h2>
 
