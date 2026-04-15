@@ -7,7 +7,7 @@
   "minRewardPoints": 1,
   "appReviewAfterInstallPromptDays": 14,
   "appReviewIntervalDays": 3,
-  "cloudregionAsia": "asia-east1"
+  "cloudRegionAsia": "asia-east1"
     
 }
 
