@@ -5,7 +5,7 @@
   "maintenanceMsg": "Our version server is under maintenance. Let's proceed with existing version.",
   "subscriptionCheckIntervalDays": 0,
   "minRewardPoints": 1,
-  "minOCRRewardPoints": 3,
+  "minOCRRewardPoints": 1,
   "minBackupRewardPoints": 5,
   "addRewardPoints": 3,
   "appReviewAfterInstallPromptDays": 14,
