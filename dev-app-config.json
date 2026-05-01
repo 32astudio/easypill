@@ -4,7 +4,9 @@
   "showMaintenanceMsg": false,
   "maintenanceMsg": "Our version server is under maintenance. Let's proceed with existing version.",
   "subscriptionCheckIntervalDays": 0,
-  "minRewardPoints": 3,
+  "minOCRRewardPoints": 3,
+  "minBackupRewardPoints": 5,
+  "addRewardPoints": 3,
   "appReviewAfterInstallPromptDays": 0,
   "appReviewIntervalDays": 0,
   "cloudRegionAsia": "us-central1"
